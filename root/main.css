@@ -1,8 +1,10 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: Geneva, Verdana, sans-serif;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
 }
+
 h1, p, a {
     color: var(--nav-text);
 }
@@ -13,42 +15,89 @@ html {
     background-color: var(--background-color);
 }
 :root {
-    --background-color: #000;
+    --background-color: #131313;
     --nav-text-hover: #ffffff;
+    --text-color: #fff;
     --nav-text: #a7a7a7;
-    --card-color: #211f22;
+    --card-color: #1c1c1e;
     --icon-color: #454d4f;
     --icon-hover: #114048;
+    --button-color: #114048;
+    --button-hover: #16515b;
 }
 
-
-body {
+/* Widget Container */
+.widget-container {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-left: 95px;
+    padding-top: 10px;
 }
 
-/* Main Section*/
-main {
+/* Card Styling */
+.container {
+    flex: 1 1 600px;
+    padding: 60px;
+    background-color: var(--card-color);
+    border-radius: 25px;
+    padding-right: 100px;
+    
+}
+.container h1 {
+    font-size: 5rem;
+    font-weight: 450;
+    margin-bottom: 20px;;
+    color: var(--text-color);
+}
+.container p {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: #cfcfcf;
+}
+.container.graphic-container {
+    padding: 0;
+    
+}
+.animation {
+    width: 100%;
+    border-radius: 30px;
+}
 
+/* Buttona */
+button {
+    background-color: var(--button-color);
+    margin-top: 30px;
+    color: var(--text-color);
+    width: 220px;
+    height: 80px;
+    border-radius: 600px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--button-hover);
 }
 
 /* Navigation */
 
 .main-navigation {
     background-color: var(--card-color);
-    
-    width: 100px;
+    width: 85px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
+    position: fixed;
 }
 
 .main-navigation ul {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .main-navigation li {
@@ -56,13 +105,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
     position: relative;
     border-radius: 15px;
     margin: 20px;
 }
 
 .main-navigation a {
+    padding-top: 5px;
     text-decoration: none;
     font-size: 14px;
     color: var(--nav-text);
@@ -71,7 +120,6 @@ main {
 
 .main-navigation i {
     font-size: 15px;
-    
     color: var(--nav-text);
     transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -82,10 +130,12 @@ main {
 
 .main-navigation li:hover i {
     color: var(--nav-text-hover);
+    cursor: pointer;
     transform: scale(1.05);
 }
 .main-navigation li:hover .icon-container{
     background-color: var(--icon-color);
+    cursor: pointer;
 }
 
 .icon-container {
@@ -103,4 +153,20 @@ main {
     height: 50px;
     background-color: var(--icon-hover);
     border-radius: 15px;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .widget-container {
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
 }
